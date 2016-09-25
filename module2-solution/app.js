@@ -37,7 +37,8 @@ function ShoppingListCheckOffService() {
   {name: "Cookies", quantity: 10},
   {name: "Milk", quantity: 3},
   {name: "Bread", quantity: 6},
-  {name: "Honey", quantity: 5}];
+  {name: "Honey", quantity: 5},
+  {name: "Juice", quantity: 2}];
   var boughtItems = [];
 
   service.addItem = function (itemName, quantity) {
