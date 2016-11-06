@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Info</h1>
+	<p ng-if="info.msg">{{info.msg}} <a ui-sref="public.regform">Sign up Now!</a></p>
+	<div ng-if="info.user">
+	<p>First Name: {{info.user.firstname}}</p>
+	<p>Last Name: {{info.user.lastname}}</p>
+	<p>Email: {{info.user.email}}</p>
+	<p>Phone Number: {{info.user.phone}}</p>
+<h2>Favourite Menu Item</h2>
+	<p><img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.user.short_name}}.jpg" ></p>
+	<p>Title: {{info.user.title}}</P>
+	<p>Description: {{info.user.description}}</p>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+<fieldset>
+  <h1>Signup for Newsletter</h1>
+  <br>
+  <form name="regForm" novalidate>
+    <input type="text" name="firstname" placeholder="First Name" ng-model="signUpController.user.firstname" required minlength="4" ng-maxlength="15">
+    <span
+      ng-if="(regForm.firstname.$error.minlength ) && regForm.firstname.$touched">
+      First Name must be at least 4 characters long
+    </span>
+    <span
+      ng-if="(regForm.firstname.$error.maxlength ) && regForm.firstname.$touched">
+      First Name must be at max 15 characters long
+    </span>
+    <br>
+    <input type="text" name="lastname" placeholder="Last Name" ng-model="signUpController.user.lastname" required minlength="1" ng-maxlength="15">
+    <span
+      ng-if="(regForm.lastname.$error.minlength ) && regForm.lastname.$touched">
+      Last Name must be at least 1 character long
+    </span>
+    <span
+      ng-if="(regForm.lastname.$error.maxlength ) && regForm.lastname.$touched">
+      Last Name must be at max 15 characters long
+    </span>
+    <br>
+    <input type="email" name="email" placeholder="Email address" ng-model="signUpController.user.email" required>
+    <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+      Must be a valid email address: handle@domain format
+    </span>
+    <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signUpController.user.phone"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone Number must be in the format ###-###-####.
+      </span>
+      <br>
+      <input type="text" name="shortname" placeholder="Short Name"
+        ng-model="signUpController.user.short_name"
+        ><span ng-if="signUpController.error_msg">{{signUpController.error_msg}}</span>
+      <br>
+      <br>
+      <button ng-disabled="regForm.$invalid" ng-click="signUpController.submit()">Submit</button>
+      <br>
+      <br>
+      <p ng-if="signUpController.save_msg">{{signUpController.save_msg}}</p>
+  </form>
+</fieldset>
+</div>
