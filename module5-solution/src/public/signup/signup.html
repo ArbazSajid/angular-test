@@ -13,7 +13,7 @@
       First Name must be at max 15 characters long
     </span>
     <br>
-    <input type="text" name="lastname" placeholder="Last Name" ng-model="signUpController.user.lastname" required minlength="1" ng-maxlength="15">
+    <input type="text" name="lastname" placeholder="Last Name" ng-model="signUpController.user.lastname" required minlength="4" ng-maxlength="15">
     <span
       ng-if="(regForm.lastname.$error.minlength ) && regForm.lastname.$touched">
       Last Name must be at least 1 character long

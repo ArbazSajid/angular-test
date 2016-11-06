@@ -32,16 +32,6 @@ function MenuService($http, ApiPath) {
     return $http.get(ApiPath + '/menu_items/'+short_name+'.json');
   };
 
-  service.saveUser = function (user) {
-    service.user = user;
-  };
-
-  service.getUser = function () {
-    return service.user;
-  };
-
 }
-
-
 
 })();

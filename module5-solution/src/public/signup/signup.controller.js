@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject=['MenuService'];
-function SignUpController(MenuService){
+SignUpController.$inject=['MenuService', 'SignUpService'];
+function SignUpController(MenuService, SignUpService){
   var signUpController = this;
   signUpController.error_msg="";
   signUpController.save_msg="";
@@ -25,7 +25,7 @@ function SignUpController(MenuService){
     MenuService.getMenuItem(signUpController.user.short_name).then(function(response){
          signUpController.user.description=response.data.description;
          signUpController.user.title=response.data.name;
-           MenuService.saveUser(signUpController.user);
+           SignUpService.saveUser(signUpController.user);
            signUpController.save_msg = "Your information has been saved";
     }).catch(function(error){
         signUpController.error_msg = "No such menu number exists";

@@ -4,12 +4,12 @@
   angular.module('public')
   .controller('InfoController', InfoController);
 
-  InfoController.$inject=['MenuService', 'ApiPath'];
-  function InfoController(MenuService, ApiPath){
+  InfoController.$inject=['SignUpService', 'ApiPath'];
+  function InfoController(SignUpService, ApiPath){
     var info = this;
     info.basePath = ApiPath;
     info.msg="";
-    info.user = MenuService.getUser();
+    info.user = SignUpService.getUser();
     if(info.user == null)
       info.msg = "Not Signed Up Yet";
     }
